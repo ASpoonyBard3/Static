@@ -5,4 +5,4 @@ reddit.com
 youtube.com
 amazon.com
 amazon.co.uk
-www.massdrop.com
+massdrop.com

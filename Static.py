@@ -13,6 +13,7 @@ maxVariety=0
 maxVisitFrequency=30 #Define the maximum time the program should wait before visiting another site
 frequency=0
 currently_visiting=""
+connection=""
 f = open(path.dirname(path.realpath(__file__))+"/safeWebsiteList.txt", "r")
 for i in f:
 	listOfSites.append(i.replace("\n","")) #Load the file into memory, removing the new line escape code
@@ -36,10 +37,12 @@ while 1==1:
 			
 	
 	if randrange(2)==1:
-		HTTPConnection(currently_visiting)
+		connection=HTTPConnection(currently_visiting)
+		connection.request("GET","/")
 		print("Currently 'visiting' http://"+ currently_visiting)
 	else:
-		HTTPSConnection(currently_visiting)
+		connection=HTTPSConnection(currently_visiting)
+		connection.request("GET","/")
 		print("Currently 'visiting' https://"+ currently_visiting)
 	frequency=randrange(maxVisitFrequency)
 	print("Waiting for "+str(frequency)+" seconds before 'visiting' another site")

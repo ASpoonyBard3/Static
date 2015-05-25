@@ -6,3 +6,5 @@ It's simple, just fill the safeWebsitesList.txt with a large variety of websites
 To do:
 
   Add more websites
+  
+  Use site maps to simulate a user clicking links on the given site

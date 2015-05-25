@@ -32,17 +32,19 @@ while 1==1:
 	
 	currently_visiting=listOfSites[randrange(len(listOfSites[0:variety]))]
 	if randrange(10)==1: #Chance of misspelling the web address
-		for i in range(randrange(len(currently_visiting)/4)): #Decide how many letters to misspell
+		for i in range(randrange(len(currently_visiting)//4)): #Decide how many letters to misspell
 			currently_visiting=currently_visiting.replace(currently_visiting[randrange(len(currently_visiting))],chr(randrange(32,128)))
 			
 	
 	if randrange(2)==1:
 		connection=HTTPConnection(currently_visiting)
 		connection.request("GET","/")
+		print(str(connection.getresponse().read())) #Find a way to get links from this
 		print("Currently 'visiting' http://"+ currently_visiting)
 	else:
 		connection=HTTPSConnection(currently_visiting)
 		connection.request("GET","/")
+		print(connection.getresponse().read())
 		print("Currently 'visiting' https://"+ currently_visiting)
 	frequency=randrange(maxVisitFrequency)
 	print("Waiting for "+str(frequency)+" seconds before 'visiting' another site")

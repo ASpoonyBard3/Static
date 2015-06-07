@@ -9,6 +9,4 @@ To do:
 
   Add more websites
   
-  Use site maps to simulate a user clicking links on the given site
-  
   Fake user agent so that true traffic can not be differentiated from fake traffic by user agent

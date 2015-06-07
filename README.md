@@ -3,6 +3,8 @@ Static is a python application that aims to create artificial traffic so that yo
 
 It's simple, just fill the safeWebsitesList.txt with a large variety of websites that would not draw any attention, the more the better.
 
+Requires beautifulsoup4 to run.
+
 To do:
 
   Add more websites

@@ -18,6 +18,7 @@ curPages=0.0 #The max pages for the given 'session'
 frequency=0
 currently_visiting=""
 connection=""
+user_agent="Mozilla Firefox"
 
 def gap():
 	print("_________________________________________________________________")
@@ -65,7 +66,7 @@ while 1==1:
 		print("There was an error connecting to "+currently_visiting+", I probably misspelt it")
 	
 	
-	for i in crawl("http://"+currently_visiting, curPages):
+	for i in crawl("http://"+currently_visiting, curPages, user_agent):
 		sleep(curPages)
 		try:
 			urlopen(i)
